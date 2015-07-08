@@ -193,12 +193,6 @@ function train()
    -- print confusion matrix
    print(confusion)
 
-   -- update logger/plot
-   trainLogger:add{['% mean class accuracy (train set)'] = confusion.totalValid * 100}
-   if opt.plot then
-      trainLogger:style{['% mean class accuracy (train set)'] = '-'}
-      trainLogger:plot()
-   end
 
    -- save/log current net
    local filename = paths.concat(opt.save, 'model.net')
